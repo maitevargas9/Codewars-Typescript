@@ -1,0 +1,33 @@
+/*
+Description
+
+Grade book
+Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with 
+that grade.
+
+Numerical Score	Letter Grade
+90 <= score <= 100	'A'
+80 <= score < 90	'B'
+70 <= score < 80	'C'
+60 <= score < 70	'D'
+0 <= score < 60	'F'
+
+Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+*/
+
+export function getGrade(a: number, b: number, c: number): string {
+  let score = (a + b + c) / 3;
+  let result = "";
+  if (90 <= score && score <= 100) {
+    result = "A";
+  } else if (80 <= score && score < 90) {
+    result = "B";
+  } else if (70 <= score && score < 80) {
+    result = "C";
+  } else if (60 <= score && score < 70) {
+    result = "D";
+  } else if (0 <= score && score < 60) {
+    result = "F";
+  }
+  return result;
+}
