@@ -14,12 +14,12 @@ Examples
 */
 
 export function order(words: string): string {
-  return words.length > 0
-    ? words
-        .split(" ")
-        .sort(function (a, b) {
-          return a.search(/[1-9]/) - b.search(/[1-9]/);
-        })
-        .join(" ")
-    : "";
+  return words
+    .split(" ")
+    .sort((a: string, b: string) => {
+      const numA = a.match(/\d/);
+      const numB = b.match(/\d/);
+      return (numA ? parseInt(numA[0]) : 0) - (numB ? parseInt(numB[0]) : 0);
+    })
+    .join(" ");
 }
